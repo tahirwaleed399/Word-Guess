@@ -1,0 +1,175 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    body {
+        background-color: #10ac84;
+    }
+    
+    .game-outer {
+        height: 85vh;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+    
+    header {
+        background-color: #1dd1a1;
+        padding: 1rem;
+        text-align: center;
+        color: white;
+        height: 15vh;
+        display: grid;
+        place-items: center;
+    }
+    
+    header h1 {
+        text-shadow: 3px 4px 2px rgba(147, 150, 150, 1);
+        letter-spacing: 10px;
+        font-family: 'Lobster', cursive;
+    }
+    
+    .game {
+        background-color: #1dd1a1;
+        width: 400px;
+        min-height: 350px;
+        height: 500px;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        align-items: center;
+        padding: 1rem;
+        position: relative;
+    }
+    
+    input {
+        margin: 2rem 0;
+        width: 80%;
+        /* margin-left: 50%;
+        transform: translateX(-50%); */
+        padding: 1rem;
+        border-radius: 1.4rem;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        outline: none;
+        border: none;
+        font-family: 'Open Sans', sans-serif;
+        /* display: block; */
+        /* margin: auto; */
+    }
+    
+    .msg {
+        font-size: 1.3rem;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 800;
+    }
+    
+    form {
+        width: 100%;
+    }
+    
+    button {
+        font-family: 'Open Sans', sans-serif;
+        padding: 1rem 1.5rem;
+        outline: none;
+        border: none;
+        background-color: white;
+        color: #10ac84;
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        letter-spacing: 6px;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .score {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+    }
+    
+    .scoreBox {
+        font-size: 1.5rem;
+    }
+    
+    .bar,
+    .bar-success {
+        width: 20%;
+        padding: 10px;
+        text-align: center;
+        background-color: #ee5253;
+        color: white;
+        font-size: 1.2rem;
+        opacity: 0;
+        transition-property: height padding;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out;
+        position: absolute;
+        top: 15vh;
+        left: -100%;
+    }
+    
+    .bar-success {
+        background-color: #126d56;
+    }
+    
+    .bar.active,
+    .bar-success.active {
+        left: 0px;
+        opacity: 1;
+    }
+    
+    @media (max-width:600px) {
+        .game {
+            width: 90%;
+            height: calc(100% - 80px);
+            min-height: 450px;
+        }
+        header h1 {
+            font-size: 1.4rem;
+        }
+        button {
+            padding: 1rem 3.5rem;
+        }
+        .msg {
+            font-size: .8rem;
+        }
+        input {
+            width: 80%;
+        }
+        .bar,
+        .bar-success {
+            width: 200px;
+            z-index: 100;
+        }
+        header {
+            height: 80px;
+        }
+    }
+    
+    @media (max-width:400px) {
+        header h1 {
+            font-size: 1rem;
+        }
+        .game {
+            min-height: 350px;
+        }
+        .bar-success {
+            width: 350px;
+        }
+    }
